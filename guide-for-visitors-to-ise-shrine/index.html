@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <meta charset="utf-8">
 <body>
@@ -47,6 +48,17 @@ var circle = svg.append("circle")
     .attr("r", 6)
     .attr("transform", "translate(" + startingPoint + ")");
 
+var totalLength = path.node().getTotalLength();
+console.log(totalLength);
+
+var pCirc = path.node().getPointAtLength(.5 * totalLength);
+var dCirc = "translate(" + pCirc.x + "," + pCirc.y + ")";
+
+var testCircle = svg.append('circle')
+  .attr("r", 25)
+  .attr("transform", dCirc);
+
+
 transition();
 
 function transition() {
@@ -67,6 +79,20 @@ function translateAlong(path) {
     };
   };
 }
+
+
+
+myObject = {
+  joeyIsA: 'fuckhead',
+  suckMah: 'dick'
+}
+
+console.log(myObject);
+
+myObjString = JSON.stringify(myObject);
+console.log(myObjString);
+
+
 
 </script>
 

@@ -4,9 +4,9 @@
 <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 	 width="1023.872px" height="304.962px" viewBox="0 0 1023.872 304.962" enable-background="new 0 0 1023.872 304.962"
 	 xml:space="preserve">
-<g id="Layer_1" display="none">
+<g id="Layer_1">
 	
-		<image display="inline" overflow="visible" width="1024" height="305" xlink:href="MapCarte32_ise_large_72.png"  transform="matrix(0.9999 0 0 0.9999 0 0)">
+		<image overflow="visible" width="1024" height="305" xlink:href="MapCarte32_ise_large_72.png"  transform="matrix(0.9999 0 0 0.9999 0 0)">
 	</image>
 </g>
 <g id="Layer_2">
