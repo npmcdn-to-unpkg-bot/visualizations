@@ -5,6 +5,31 @@ console.log('lodash version:', _.VERSION);
 // let person = new Person();
 // console.log(person.name);
 
+//data
+var sData = [
+    {
+        year: 2012,
+        subscribers: 500,
+        publications: ['Construction Dive'],
+        employees: 3,
+        office: 'Grocery Store'
+    },
+    {
+        year: 2013,
+        subscribers: 7500,
+        publications: ['Construction Dive', 'Utility Dive', 'CIO Dive'],
+        employees: 6,
+        office: 'Grocery Store'
+    }
+]
+
+
+var vData = [];
+//end data
+
+
+
+//classes (should be able to use in dive-vis repo
 class FullSvg {
     element: number;
     drawPadding: number;
@@ -49,11 +74,19 @@ class FullSvg {
 }
 
 var svg = new FullSvg('body');
-
 console.log(svg);
 
 
-//make scales
+//make line scales
+var lineScaleX = d3.scaleLinear()
+    .domain([2012, 2016])
+    .range([svg.drawPadding, svg.drawDimensions[0]]);
+
+var lineScaleY = d3.scaleLinear()
+    .domain([0, d3.max(sData, function(d){return d.year;})])
+
+
+//make other scales
 var columnScale = d3.scaleLinear()
     .domain([0,2])
     .range([svg.drawPadding, svg.drawDimensions[0]]);
@@ -64,11 +97,4 @@ var publicationScaleVertical = d3.scaleLinear()
 
 
 
-console.log(publicationScaleVertical);
-console.log(publicationScaleVertical(0));
-console.log(publicationScaleVertical(1));
-console.log(publicationScaleVertical(2));
 
-
-
-//var columnScaleOrdinal =
