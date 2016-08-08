@@ -11,13 +11,28 @@ body {
   width: 1000px;
 }
 
-//path {
-//  fill: none;
-//  stroke: #24FFA7;
-//  stroke-width: 3px;
-//  stroke-linejoin: round;
-//  opacity: .5;
-//}
+path {
+  fill: none;
+  stroke: #AAA;
+  stroke-width: 3px;
+  stroke-linejoin: round;
+  opacity: .5;
+}
+
+circle {
+  //stroke: #CCC;
+  //stroke-width: 2px;
+  &.pubSites {
+    fill: #FFF;
+    stroke: #CCC;
+    stroke-width: 2px;
+  }
+
+  &.employees {
+    opacity: .5;
+  }
+
+}
 //
 //circle {
 //  fill: white;

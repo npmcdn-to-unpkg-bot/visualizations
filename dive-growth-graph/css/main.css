@@ -9,4 +9,18 @@ body {
   margin: 0 auto;
   width: 1000px; }
 
+path {
+  fill: none;
+  stroke: #AAA;
+  stroke-width: 3px;
+  stroke-linejoin: round;
+  opacity: .5; }
+
+circle.pubSites {
+  fill: #FFF;
+  stroke: #CCC;
+  stroke-width: 2px; }
+circle.employees {
+  opacity: .5; }
+
 /*# sourceMappingURL=main.css.map */
