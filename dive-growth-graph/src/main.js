@@ -116,6 +116,14 @@ var employeeScaleVertical = d3.scaleLinear()
 // console.log(sData[1].subscribers);
 // console.log(lineScaleY(sData[0].subscribers))
 // console.log(lineScaleY(sData[1].subscribers))
+//TODO, delete this, only temp grid to align elements
+var tempGridLines = svg.element.selectAll('grid lines')
+    .data([0, 1, 2, 3, 4, 5, 6, 7, 8, 9])
+    .enter().append('path')
+    .attr('class', 'gridline')
+    .attr('d', function (d) {
+    return ('M20,' + employeeScaleVertical(d) + 'L980,' + employeeScaleVertical(d));
+});
 //make line function
 var lineFunc = d3.line()
     .x(function (d) { return lineScaleX(d.year); })
@@ -126,7 +134,7 @@ var gLine = svg.element.append('g')
     .attr('class', 'line');
 var line = gLine.append('path')
     .datum(vData)
-    .attr('class', 'line')
+    .attr('class', 'subscribers')
     .attr('d', lineFunc);
 //make g for publication sites and add starting industry dive circle
 var gPubSites = svg.element.append('g')
@@ -150,6 +158,14 @@ var pubSiteCircles = gPubSites.selectAll('circle')
     }
     else {
         return 20;
+    }
+})
+    .attr('fill', function (d, i) {
+    if (i === 0) {
+        return '#dc4438';
+    }
+    else {
+        return '#FFF';
     }
 });
 //make g for employees and then add starting employee svgs
@@ -176,17 +192,6 @@ var employeeIcons = gEmployees.selectAll('circle')
         return 'pink';
     }
 });
-// var tempLineFunc = d3.line()
-//     .x(function(d){return lineScaleX(d);})
-//     .y(function(d){return lineScaleY(d);})
-//TODO, delete this, only temp grid to align elements
-var tempGridLines = svg.element.selectAll('grid lines')
-    .data([0, 1, 2, 3, 4, 5, 6, 7, 8, 9])
-    .enter().append('path')
-    .attr('class', 'gridline')
-    .attr('d', function (d) {
-    return ('M20,' + employeeScaleVertical(d) + 'L980,' + employeeScaleVertical(d));
-});
 function getCurrentYear() {
     var years = _.map(vData, 'year');
     return years;
@@ -210,6 +215,7 @@ function updateVis() {
         .attr('cx', columnScale(0))
         .attr('cy', function (d, i) { return publicationScaleVertical(i); })
         .attr('r', 20)
+        .attr('fill', '#FFF')
         .style('opacity', 0)
         .transition()
         .duration(function (d, i) {

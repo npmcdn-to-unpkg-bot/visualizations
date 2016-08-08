@@ -13,17 +13,26 @@ body {
 
 path {
   fill: none;
-  stroke: #AAA;
   stroke-width: 3px;
   stroke-linejoin: round;
-  opacity: .5;
+
+  &.subscribers{
+    stroke: #8bc34a;
+    opacity: .5;
+  }
+
+  &.gridline {
+    stroke: #AAA;
+    opacity: .25;
+    stroke-width: 2px;
+  }
 }
 
 circle {
   //stroke: #CCC;
   //stroke-width: 2px;
   &.pubSites {
-    fill: #FFF;
+    //fill: #FFF;
     stroke: #CCC;
     stroke-width: 2px;
   }

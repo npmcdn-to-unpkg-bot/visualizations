@@ -11,13 +11,17 @@ body {
 
 path {
   fill: none;
-  stroke: #AAA;
   stroke-width: 3px;
-  stroke-linejoin: round;
-  opacity: .5; }
+  stroke-linejoin: round; }
+  path.subscribers {
+    stroke: #8bc34a;
+    opacity: .5; }
+  path.gridline {
+    stroke: #AAA;
+    opacity: .25;
+    stroke-width: 2px; }
 
 circle.pubSites {
-  fill: #FFF;
   stroke: #CCC;
   stroke-width: 2px; }
 circle.employees {

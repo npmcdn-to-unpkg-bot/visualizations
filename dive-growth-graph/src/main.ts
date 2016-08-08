@@ -146,6 +146,20 @@ var employeeScaleVertical = d3.scaleLinear()
 // console.log(lineScaleY(sData[0].subscribers))
 // console.log(lineScaleY(sData[1].subscribers))
 
+//TODO, delete this, only temp grid to align elements
+var tempGridLines = svg.element.selectAll('grid lines')
+    .data([0,1,2,3,4,5,6,7,8,9])
+    .enter().append('path')
+    .attr('class', 'gridline')
+    .attr('d', function(d){
+        return ('M20,'+ employeeScaleVertical(d) +'L980,'+ employeeScaleVertical(d));
+    });
+
+
+
+
+
+
 //make line function
 var lineFunc = d3.line()
     .x(function(d){return lineScaleX(d.year);})
@@ -160,7 +174,7 @@ var gLine = svg.element.append('g')
 
 var line = gLine.append('path')
     .datum(vData)
-    .attr('class', 'line')
+    .attr('class', 'subscribers')
     .attr('d', lineFunc);
 
 //make g for publication sites and add starting industry dive circle
@@ -186,6 +200,14 @@ var pubSiteCircles = gPubSites.selectAll('circle')
         }
         else {
             return 20;
+        }
+    })
+    .attr('fill', function(d,i){
+        if(i === 0){
+            return '#dc4438';
+        }
+        else {
+            return '#FFF';
         }
     });
 
@@ -214,19 +236,6 @@ var employeeIcons = gEmployees.selectAll('circle')
         else {
             return 'pink';
         }
-    });
-
-// var tempLineFunc = d3.line()
-//     .x(function(d){return lineScaleX(d);})
-//     .y(function(d){return lineScaleY(d);})
-
-//TODO, delete this, only temp grid to align elements
-var tempGridLines = svg.element.selectAll('grid lines')
-    .data([0,1,2,3,4,5,6,7,8,9])
-    .enter().append('path')
-    .attr('class', 'gridline')
-    .attr('d', function(d){
-        return ('M20,'+ employeeScaleVertical(d) +'L980,'+ employeeScaleVertical(d));
     });
 
 
@@ -266,6 +275,7 @@ function updateVis(){
         .attr('cx', columnScale(0))
         .attr('cy', function(d,i){return publicationScaleVertical(i);})
         .attr('r', 20)
+        .attr('fill','#FFF')
         .style('opacity', 0)
         .transition()
         .duration(function(d,i){
