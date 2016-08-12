@@ -18,10 +18,23 @@ body {
     width: 33%;
     height: 100%;
     float: left; }
-  .bubbles .bub-buttons button {
-    width: 50%;
-    margin-top: 15px;
-    padding: 15px; }
+  .bubbles circle {
+    stroke-width: .5px;
+    stroke: #cecece; }
+  .bubbles .bub-buttons {
+    background: yellowgreen; }
+    .bubbles .bub-buttons button {
+      width: 50%;
+      margin-top: 15px;
+      padding: 15px; }
+  .bubbles .bub-data {
+    background: lightcoral;
+    overflow: auto; }
+    .bubbles .bub-data p {
+      font-family: "Lucida Console", Monaco, monospace;
+      font-size: 12px;
+      margin: 5px 0 5px 10px;
+      float: left; }
   @media screen and (max-width: 750px) {
     .bubbles div {
       width: 100%;

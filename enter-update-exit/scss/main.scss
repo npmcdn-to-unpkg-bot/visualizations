@@ -17,18 +17,39 @@ body {
   position: relative;
   display: block;
 
+
   div {
     width: 33%;
     height: 100%;
     float: left;
   }
 
+  circle {
+    stroke-width: .5px;
+    stroke: #cecece;
+  }
+
   .bub-buttons{
+    background: yellowgreen;
+
     button{
       width: 50%;
       margin-top: 15px;
       padding: 15px;
     }
+  }
+
+  .bub-data{
+    background: lightcoral;
+    overflow: auto;
+
+    p{
+      font-family: "Lucida Console", Monaco, monospace;
+      font-size: 12px;
+      margin: 5px 0 5px 10px;
+      float: left;
+    }
+
   }
 
   @media screen and (max-width: 750px){
@@ -38,3 +59,6 @@ body {
     }
   }
 }
+
+
+
