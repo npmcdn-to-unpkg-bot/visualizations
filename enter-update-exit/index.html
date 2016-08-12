@@ -2,22 +2,96 @@
 <html>
     <head>
         <meta charset="utf-8">
-        <title>Start Template</title>
+        <title>Enter Update Exit</title>
         <link rel="stylesheet" type="text/css" href="css/main.css">
 
-        <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/typescript/2.0.0/typescript.js"></script>-->
-        <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.2.0/require.js" data-main="src/main.js"></script>-->
         <script src="http://d3js.org/d3.v4.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.14.1/lodash.js"></script>
     </head>
     <body>
+        <div class="bubbles">
+            <div class="bub-buttons">
+                <button id="enter">Enter</button>
+                <button id="update">Update</button>
+                <button id="exit">Exit</button>
+            </div>
+            <div class="bub-data">
+
+            </div>
+            <div class="bub-vis">
+
+            </div>
+
+        </div>
 
     </body>
-    <!--<script src="src/exportSvg.js"></script>-->
-    <!--<script src="scripts/exporter.js"></script>-->
-    <script data-main="scripts/main" src="scripts/require.js"></script>
 </html>
 
+<script>
+    var containerWidth = d3.select(".bub-vis").style('width');
+    var containerHeight = d3.select(".bub-vis").style('height');
+    console.log( containerWidth );
+    console.log( containerHeight );
 
+
+
+    var data = [];
+
+    var svg = d3.select('.bub-vis').append('svg')
+        .attr('width', containerWidth)
+        .attr('height', containerHeight)
+        .style('background', 'gray');
+
+    var g = svg.append('g')
+        .attr('class','vis');
+
+    ///////////
+
+    function init(){
+        //make two random points
+        //call enter data and enter text
+    }
+
+    //////////////
+
+
+    function enterData(d){
+
+    }
+
+    function enterVis(d){
+        //add new p(or multiple) to bub-data
+        //color green, then .5 - 1 sec transition to black?
+    }
+
+
+
+    function updateData(d){
+
+    }
+
+    function updateVis(d){
+
+    }
+
+
+
+    function exitData(d){
+
+    }
+
+    function exitVis(d){
+
+    }
+
+
+
+    function getRandomPoint(){
+
+    }
+
+
+
+</script>
 
 
